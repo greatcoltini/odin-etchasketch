@@ -20,10 +20,70 @@
 </head>
 
 <body>
-    <main class="container">
+    <main class="container g-2 row row-cols">
         
+        <div class="col p-3 text-bg-dark" style=" width: 280px; height:auto; max-width: 500px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi pe-none me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4">TOOLS</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a id="r1h" href="#" class="nav-link" aria-current="page">
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Sizing Settings
+                    </a>
+                    <div class="button-group">
+                        <button class="btn btn-primary">Small (64x64)</button>
+                        <button class="btn btn-primary">Medium (128x128)</button>
+                        <button class="btn btn-primary">Large (256x256)</button>
+                    </div>
+                </li>
+                <li>
+                    <a id="r2h" href="#" class="nav-link">
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Round 2
+                    </a>
+                </li>
+                <li>
+                    <a id="r3h" href="#" class="nav-link">
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                            <use xlink:href="#table"></use>
+                        </svg>
+                        Round 3
+                    </a>
+                </li>
+                <li>
+                    <a id="r4h" href="#" class="nav-link">
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                            <use xlink:href="#grid"></use>
+                        </svg>
+                        Round 4
+                    </a>
+                </li>
+                <li>
+                    <a id="r5h" href="#" class="nav-link">
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                            <use xlink:href="#people-circle"></use>
+                        </svg>
+                        Round 5
+                    </a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+
         <!-- sketch board -->
-        <div id="board" class="grid-container">
+        <div class="col">
+            <div id="board" class="col grid-container">
+            </div>
         </div>
     </main>
 

@@ -2,7 +2,7 @@
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   background-color: #2196F3;
-  position:relative;
+  position:fixed;
   width: 50vw;
   height: 50vh;
   padding: 1vw;
