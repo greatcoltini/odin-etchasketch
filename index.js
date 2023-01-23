@@ -23,6 +23,9 @@ function sketchboard_create(size)
                 }
             })
 
+            piece.onmouseleave = function() {entering(this)}
+            piece.onmouseenter = function() {leaving(this)}
+            
             piece.onclick = function() {colour_on_click(this, null)};
             piece.classList.add('grid-item');
             board.appendChild(piece);
@@ -39,6 +42,15 @@ function colour_on_click(element, colour)
     }
 
     element.style.backgroundColor = colour;
+}
+
+function entering(element)
+{
+    element.style.opacity = 1;
+}
+function leaving(element)
+{
+    element.style.opacity = 0.5;
 }
 
 window.onload = function() {sketchboard_create(16)};
