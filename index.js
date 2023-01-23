@@ -1,4 +1,4 @@
-
+const picked_colour = "#ff0000";
 
 // function to create 16x16 divs; square in nature
 function sketchboard_create(size)
@@ -38,7 +38,7 @@ function colour_on_click(element, colour)
 {
     if (colour == null)
     {
-        colour = "black";
+        colour = picked_colour;
     }
 
     element.style.backgroundColor = colour;
