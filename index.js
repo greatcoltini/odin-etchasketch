@@ -1,9 +1,14 @@
 const picked_colour = "#ff0000";
 
+
 // function to create 16x16 divs; square in nature
 function sketchboard_create(size)
 {
     board = document.getElementById('board');
+
+    colorPicker = document.getElementById('colorPicker');
+
+    colorPicker.addEventListener("change", watchColorPicker, false);
 
     // creates the [i] of the board
     for (let i = 0; i < size; i++)
@@ -26,21 +31,21 @@ function sketchboard_create(size)
             piece.onmouseleave = function() {entering(this)}
             piece.onmouseenter = function() {leaving(this)}
             
-            piece.onclick = function() {colour_on_click(this, null)};
+            piece.onclick = function() {colour_on_click(this, picked_colour)};
             piece.classList.add('grid-item');
             board.appendChild(piece);
         }
     }
 }
 
+function watchColorPicker(event){
+    alert(event.target.value);
+    picked_colour = event.target.value;
+}
+
 // color on click
 function colour_on_click(element, colour)
 {
-    if (colour == null)
-    {
-        colour = picked_colour;
-    }
-
     element.style.backgroundColor = colour;
 }
 
