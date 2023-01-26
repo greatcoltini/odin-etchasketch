@@ -20,9 +20,9 @@
 </head>
 
 <body>
-    <main class="container g-2 row row-cols">
+    <main class="g-2 row row-cols">
         
-        <div class="col p-3 text-bg-dark" style=" width: 280px; height:auto; max-width: 500px;">
+        <div class="col p-3 mx-5 my-5 text-bg-dark" style=" width: 140; height:auto; max-width: 280px;">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <svg class="bi pe-none me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
@@ -32,16 +32,16 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a id="r1h" href="#" class="nav-link disabled" aria-current="page">
+                    <a id="r1h" href="#" class="nav-link disabled text-center" aria-current="page">
                         <svg class="bi pe-none me-2" width="16" height="16">
                             <use xlink:href="#home"></use>
                         </svg>
                         Sizing Settings
                     </a>
-                    <div class="button-group">
-                        <button class="btn btn-primary">Small (64x64)</button>
-                        <button class="btn btn-primary">Medium (128x128)</button>
-                        <button class="btn btn-primary">Large (256x256)</button>
+                    <div id="size_buttons" class="button-group">
+                        <button id="1" onclick="sketchboard_create(this, 16)" class="btn btn-primary">Small (16x16)</button>
+                        <button onclick="sketchboard_create(this, 32)" class="btn btn-primary">Medium (32x32)</button>
+                        <button onclick="sketchboard_create(this, 64)" class="btn btn-primary">Large (64x64)</button>
                     </div>
                 </li>
                 <li>

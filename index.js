@@ -1,11 +1,21 @@
-const picked_colour = "#ff0000";
+var picked_colour = "#ff0000";
 
 
 // function to create 16x16 divs; square in nature
-function sketchboard_create(size)
+function sketchboard_create(element, size)
 {
-    board = document.getElementById('board');
+    // adjust buttons disabled;
+    buttons_adjustment(element);
 
+    board = document.getElementById('board');
+    //clear out previous elements of board
+    clear_board(board);
+    
+    board.classList.add("grid-container");
+    size_class = "grid-container-" + size.toString();
+    board.classList.add(size_class);
+    
+    colorPicker.value = picked_colour;
     colorPicker = document.getElementById('colorPicker');
 
     colorPicker.addEventListener("change", watchColorPicker, false);
@@ -24,7 +34,7 @@ function sketchboard_create(size)
             {
                 if (e.buttons == 1)
                 {
-                    colour_on_click(this, null);
+                    colour_on_click(this, picked_colour);
                 }
             })
 
@@ -33,13 +43,24 @@ function sketchboard_create(size)
             
             piece.onclick = function() {colour_on_click(this, picked_colour)};
             piece.classList.add('grid-item');
+            piece.classList.add('grid-item-' + size.toString());
             board.appendChild(piece);
         }
     }
 }
 
+function clear_board(element)
+{
+    // clears existing grid items
+    while (element.firstChild)
+    {
+        element.removeChild(element.lastChild);
+    }
+    
+    element.classList.remove("grid-container-16", "grid-container-32", "grid-container-64");
+}
+
 function watchColorPicker(event){
-    alert(event.target.value);
     picked_colour = event.target.value;
 }
 
@@ -58,4 +79,21 @@ function leaving(element)
     element.style.opacity = 0.5;
 }
 
-window.onload = function() {sketchboard_create(16)};
+// adjustment for button selected
+function buttons_adjustment(current_button)
+{
+    button_group_children = document.getElementById("size_buttons").children;
+    for (let i = 0; i < button_group_children.length; i++)
+    {
+        if (button_group_children[i] == current_button)
+        {
+            button_group_children[i].classList.add('disabled');
+        }
+        else
+        {
+            button_group_children[i].classList.remove('disabled');
+        }
+    }
+}
+
+window.onload = function() {sketchboard_create(document.getElementById('1'), 16)};
